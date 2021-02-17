@@ -14,3 +14,7 @@ last_name = input_list[1]
 print(list(map(' '.join , zip(first_name,last_name))))//  zip forms a list of tuples 
 name = list(map(lambda x,y: x+ " " + y, first_name,last_name)) // lambda, all iterables one after other, two lists here.
 print([x+' '+y for x,y in zip(first_name,last_name)])
+
+@classmethod
+@staticmethod
+instance method -> needs no decorators like above
