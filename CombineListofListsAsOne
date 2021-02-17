@@ -1,1 +1,16 @@
+#Given list of lists combine it as one list adding each eleement at respective pos from all sublists in list
+For e.g. if the input list is:
+[ ['Ankur', 'Avik', 'Kiran', 'Nitin'], ['Narang', 'Sarkar', 'R', 'Sareen']]
 
+the output list should be the list:
+['Ankur Narang', 'Avik Sarkar', 'Kiran R', 'Nitin Sareen']
+
+import ast,sys
+input_str = sys.stdin.read()
+input_list = ast.literal_eval(input_str)
+first_name = input_list[0]
+last_name = input_list[1]
+
+print(list(map(' '.join , zip(first_name,last_name))))//  zip forms a list of tuples 
+name = list(map(lambda x,y: x+ " " + y, first_name,last_name)) // lambda, all iterables one after other, two lists here.
+print([x+' '+y for x,y in zip(first_name,last_name)])
